@@ -1,0 +1,278 @@
+/* ---------- ОБНУЛЕНИЕ И БАЗА ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+/* ---------- КОНТЕЙНЕР ---------- */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------- ШАПКА ---------- */
+.header {
+    padding: 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a4d3e;
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #1a4d3e;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    background: linear-gradient(135deg, #f3f9f6 0%, #e8f0eb 100%);
+    padding: 80px 0;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #4b5563;
+    margin-bottom: 32px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #3b3b3b;
+    color: white;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #1a4d3e;
+}
+
+.btn-primary:hover {
+    background-color: #0f3a2e;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 32px;
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- ПРЕИМУЩЕСТВА (УМЕНЬШЕННЫЕ КАРТОЧКИ) ---------- */
+.advantages {
+    padding: 80px 0;
+    background-color: #f9fafb;
+}
+
+.advantages-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+    color: #111827;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.advantage-card {
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.advantage-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Левая часть с картинкой */
+.advantage-left {
+    flex-shrink: 0;
+}
+
+.advantage-img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Правая часть с текстом */
+.advantage-right {
+    flex: 1;
+}
+
+.advantage-right h3 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+    color: #1a4d3e;
+}
+
+.advantage-size {
+    font-size: 0.55rem;
+    font-weight: 500;
+    color: #9ca3af;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.advantage-right p {
+    font-size: 0.85rem;
+    color: #6b7280;
+    line-height: 1.2;
+}
+
+/* ---------- АДАПТАЦИЯ ---------- */
+@media (max-width: 1024px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav {
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 48px 0;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    .advantages {
+        padding: 48px 0;
+    }
+
+    .advantages-title {
+        font-size: 1.6rem;
+        margin-bottom: 32px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .advantage-card {
+        padding: 10px 12px;
+    }
+
+    .advantage-img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .advantage-right h3 {
+        font-size: 0.75rem;
+    }
+
+    .advantage-size {
+        font-size: 0.5rem;
+    }
+
+    .advantage-right p {
+        font-size: 0.6rem;
+    }
+}
