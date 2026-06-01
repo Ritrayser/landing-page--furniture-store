@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Мебельный рай</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,14 +12,16 @@
     <header class="header">
         <div class="container">
             <div class="logo">Мебельный рай</div>
-            <div class="nav">
+            <button class="burger" id="burgerBtn">☰</button>
+            <nav class="nav" id="navMenu">
                 <a href="#">Главная</a>
                 <a href="#categories">Каталог</a>
                 <a href="#advantages">Преимущества</a>
                 <a href="#contacts">Контакты</a>
-            </div>
+            </nav>
         </div>
     </header>
+
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
@@ -32,49 +34,59 @@
             </div>
         </div>
     </section>
-     <section class="advantages">
-    <div class="container">
-        <h2 class="advantages-title">Наши преимущества</h2>
-        <div class="advantages-grid">
-            <div class="advantage-card">
-                <div class="advantage-left">
-                    <img src="images/delivery-icon.png" alt="Быстрая доставка" class="advantage-img">
+
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <h2 class="advantages-title">Наши преимущества</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-left">
+                        <img src="images/delivery-icon.png" alt="Быстрая доставка" class="advantage-img">
+                    </div>
+                    <div class="advantage-right">
+                        <h3>БЫСТРАЯ ДОСТАВКА</h3>
+                        <p>Быстрая доставка по Москве за 1-2 дня</p>
+                    </div>
                 </div>
-                <div class="advantage-right">
-                    <h3>БЫСТРАЯ ДОСТАВКА</h3>
-                    <p>Быстрая доставка по Москве за 1-2 дня</p>
+                <div class="advantage-card">
+                    <div class="advantage-left">
+                        <img src="images/pickup-icon.png" alt="Самовывоз" class="advantage-img">
+                    </div>
+                    <div class="advantage-right">
+                        <h3>САМОВЫВОЗ ИЗ МАГАЗИНА</h3>
+                        <p>Бесплатный самовывоз из любого магазина</p>
+                    </div>
                 </div>
-            </div>
-            <div class="advantage-card">
-                <div class="advantage-left">
-                    <img src="images/pickup-icon.png" alt="Самовывоз" class="advantage-img">
+                <div class="advantage-card">
+                    <div class="advantage-left">
+                        <img src="images/packaging-icon.png" alt="Особая упаковка" class="advantage-img">
+                    </div>
+                    <div class="advantage-right">
+                        <h3>ОСОБАЯ УПАКОВКА</h3>
+                        <p>Надёжная упаковка для сохранности мебели</p>
+                    </div>
                 </div>
-                <div class="advantage-right">
-                    <h3>САМОВЫВОЗ ИЗ МАГАЗИНА</h3>
-                    <p>Бесплатный самовывоз из любого магазина</p>
-                </div>
-            </div>
-            <div class="advantage-card">
-                <div class="advantage-left">
-                    <img src="images/packaging-icon.png" alt="Особая упаковка" class="advantage-img">
-                </div>
-                <div class="advantage-right">
-                    <h3>ОСОБАЯ УПАКОВКА</h3>
-                    <p>Надёжная упаковка для сохранности мебели</p>
-                </div>
-            </div>
-            <div class="advantage-card">
-                <div class="advantage-left">
-                    <img src="images/return-icon.png" alt="Возврат и обмен" class="advantage-img">
-                </div>
-                <div class="advantage-right">
-                    <h3>ВОЗВРАТ И ОБМЕН</h3>
-                    <p>Возврат товара в течение 30 дней</p>
+                <div class="advantage-card">
+                    <div class="advantage-left">
+                        <img src="images/return-icon.png" alt="Возврат и обмен" class="advantage-img">
+                    </div>
+                    <div class="advantage-right">
+                        <h3>ВОЗВРАТ И ОБМЕН</h3>
+                        <p>Возврат товара в течение 30 дней</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <script>
+        const burger = document.getElementById('burgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+    </script>
 </body>
 
 </html>
